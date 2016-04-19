@@ -12,6 +12,27 @@ elasticsearch_download_link="https://download.elasticsearch.org/elasticsearch/re
 kibana_download_link="https://download.elastic.co/kibana/kibana/kibana-4.4.2-linux-x64.tar.gz"
 logstash_download_link="https://download.elastic.co/logstash/logstash/packages/debian/logstash_2.2.2-1_all.deb"
 
+libbde="https://github.com/libyal/libbde/releases/download/20160418/libbde-alpha-20160418.tar.gz"
+libesedb="https://github.com/libyal/libesedb/releases/download/20151213/libesedb-experimental-20151213.tar.gz"
+libevt="https://github.com/libyal/libevt/releases/download/20160107/libevt-alpha-20160107.tar.gz"
+libevtx="https://github.com/libyal/libevtx/releases/download/20160107/libevtx-alpha-20160107.tar.gz"
+libewf="https://github.com/libyal/libewf/releases/download/20160403/libewf-experimental-20160403.tar.gz"
+libfsntfs="https://github.com/libyal/libfsntfs/releases/download/20160418/libfsntfs-experimental-20160418.tar.gz"
+libfwsi="https://github.com/libyal/libfwsi/releases/download/20160110/libfwsi-experimental-20160110.tar.gz"
+liblnk="https://github.com/libyal/liblnk/releases/download/20160107/liblnk-alpha-20160107.tar.gz"
+libmsiecf="https://github.com/libyal/libmsiecf/releases/download/20160107/libmsiecf-alpha-20160107.tar.gz"
+libolecf="https://github.com/libyal/libolecf/releases/download/20160107/libolecf-alpha-20160107.tar.gz"
+libqcow="https://github.com/libyal/libqcow/releases/download/20160123/libqcow-alpha-20160123.tar.gz"
+libregf="https://github.com/libyal/libregf/releases/download/20160107/libregf-alpha-20160107.tar.gz"
+libscca="https://github.com/libyal/libscca/releases/download/20160108/libscca-alpha-20160108.tar.gz"
+libsigscan="https://github.com/libyal/libsigscan/releases/download/20160312/libsigscan-experimental-20160312.tar.gz"
+libsmdev="https://github.com/libyal/libsmdev/releases/download/20160320/libsmdev-alpha-20160320.tar.gz"
+libsmraw="https://github.com/libyal/libsmraw/releases/download/20160108/libsmraw-alpha-20160108.tar.gz"
+libvhdi="https://github.com/libyal/libvhdi/releases/download/20160108/libvhdi-alpha-20160108.tar.gz"
+libvmdk="https://github.com/libyal/libvmdk/releases/download/20160119/libvmdk-alpha-20160119.tar.gz"
+libvshadow="https://github.com/libyal/libvshadow/releases/download/20160110/libvshadow-alpha-20160110.tar.gz"
+
+
 install_elasticsearch()
 {
 	# check if elasticsearch is install
@@ -83,36 +104,59 @@ install_plaso()
 	git clone https://github.com/log2timeline/plaso
 
 	pip install ipython libbde-python libesedb-python libevt-python libevtx-python libewf-python libfwsi-python liblnk-python libmsiecf-python libolecf-python libqcow-python libregf-python libsigscan-python libsmdev-python libsmraw-python libvhdi-python libvmdk-python libvshadow-python python-bencode python-coveralls python-dateutil pytsk3 artifacts bencode binplist construct dfvfs dfwinreg dpkt xlsxwriter zmq ipython dfdatetime pycrypto
-	apt-get -y install python-hachoir-core python-hachoir-metadata python-hachoir-parser python-pefile python-protobuf python-psutil python-pyparsing python-six python-yaml python-tz python-dateutil
+#	apt-get -y install python-hachoir-core python-hachoir-metadata python-hachoir-parser python-pefile python-protobuf python-psutil python-pyparsing python-six python-yaml python-tz python-dateutil
 
 	mkdir plaso_depencies
 	cd plaso_depencies
-	git clone https://github.com/libyal/libbde
-	git clone https://github.com/libyal/libesedb
-	git clone https://github.com/libyal/libevt
-	git clone https://github.com/libyal/libevtx
-	git clone https://github.com/libyal/libewf
-	git clone https://github.com/libyal/libfsntfs
-	git clone https://github.com/libyal/libfwsi
-	git clone https://github.com/libyal/liblnk
-	git clone https://github.com/libyal/libmsiecf
-	git clone https://github.com/libyal/libolecf
-	git clone https://github.com/libyal/libqcow
-	git clone https://github.com/libyal/libregf
-	git clone https://github.com/libyal/libscca
-	git clone https://github.com/libyal/libsigscan
-	git clone https://github.com/libyal/libsmdev
-	git clone https://github.com/libyal/libsmraw
-	git clone https://github.com/libyal/libvhdi
-	git clone https://github.com/libyal/libvmdk
-	git clone https://github.com/libyal/libvshadow
+#	git clone https://github.com/libyal/libbde
+#	git clone https://github.com/libyal/libesedb
+#	git clone https://github.com/libyal/libevt
+#	git clone https://github.com/libyal/libevtx
+#	git clone https://github.com/libyal/libewf
+#	git clone https://github.com/libyal/libfsntfs
+#	git clone https://github.com/libyal/libfwsi
+#	git clone https://github.com/libyal/liblnk
+#	git clone https://github.com/libyal/libmsiecf
+#	git clone https://github.com/libyal/libolecf
+#	git clone https://github.com/libyal/libqcow
+#	git clone https://github.com/libyal/libregf
+#	git clone https://github.com/libyal/libscca
+#	git clone https://github.com/libyal/libsigscan
+#	git clone https://github.com/libyal/libsmdev
+#	git clone https://github.com/libyal/libsmraw
+#	git clone https://github.com/libyal/libvhdi
+#	git clone https://github.com/libyal/libvmdk
+#	git clone https://github.com/libyal/libvshadow
+
+	wget $libbde
+	wget $libesedb
+	wget $libevt
+	wget $libevtx
+	wget $libewf
+	wget $libfsntfs
+	wget $libfwsi
+	wget $liblnk
+	wget $libmsiecf
+	wget $libolecf
+	wget $libqcow
+	wget $libregf
+	wget $libscca
+	wget $libsigscan
+	wget $libsmdev
+	wget $libsmraw
+	wget $libvhdi
+	wget $libvmdk
+	wget $libvshadow
+
+	tar -xvf ./*.tar.gz
+	rm *.tar.gz
 
 	for d in ./*
 	do
 		cd $d
-		./synclibs.sh
-		./autogen.sh
-		./configure
+#		./synclibs.sh
+#		./autogen.sh
+#		./configure
 		make
 		make install
 		python setup.py build
