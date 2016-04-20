@@ -103,8 +103,8 @@ install_plaso()
 {
 	git clone https://github.com/log2timeline/plaso
 
-	pip install ipython libbde-python libesedb-python libevt-python libevtx-python libewf-python libfwsi-python liblnk-python libmsiecf-python libolecf-python libqcow-python libregf-python libsigscan-python libsmdev-python libsmraw-python libvhdi-python libvmdk-python libvshadow-python python-bencode python-coveralls python-dateutil pytsk3 artifacts bencode binplist construct dfvfs dfwinreg dpkt xlsxwriter zmq dfdatetime pycrypto
-	apt-get -y install python-hachoir-core python-hachoir-metadata python-hachoir-parser python-pefile python-protobuf python-psutil python-pyparsing python-six python-yaml python-tz python-dateutil
+	pip install ipython libbde-python libesedb-python libevt-python libevtx-python libewf-python libfwsi-python liblnk-python libmsiecf-python libolecf-python libqcow-python libregf-python libsigscan-python libsmdev-python libsmraw-python libvhdi-python libvmdk-python libvshadow-python python-bencode python-coveralls python-dateutil pytsk3 artifacts bencode binplist construct dfvfs dfwinreg dpkt xlsxwriter zmq dfdatetime pycrypto pefile
+	apt-get -y install python-hachoir-core python-hachoir-metadata python-hachoir-parser python-protobuf python-psutil python-pyparsing python-six python-yaml python-tz python-dateutil
 
 	mkdir plaso_depencies
 	cd plaso_depencies
