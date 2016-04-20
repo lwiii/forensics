@@ -103,30 +103,11 @@ install_plaso()
 {
 	git clone https://github.com/log2timeline/plaso
 
-	pip install ipython libbde-python libesedb-python libevt-python libevtx-python libewf-python libfwsi-python liblnk-python libmsiecf-python libolecf-python libqcow-python libregf-python libsigscan-python libsmdev-python libsmraw-python libvhdi-python libvmdk-python libvshadow-python python-bencode python-coveralls python-dateutil pytsk3 artifacts bencode binplist construct dfvfs dfwinreg dpkt xlsxwriter zmq ipython dfdatetime pycrypto
-#	apt-get -y install python-hachoir-core python-hachoir-metadata python-hachoir-parser python-pefile python-protobuf python-psutil python-pyparsing python-six python-yaml python-tz python-dateutil
+	pip install ipython libbde-python libesedb-python libevt-python libevtx-python libewf-python libfwsi-python liblnk-python libmsiecf-python libolecf-python libqcow-python libregf-python libsigscan-python libsmdev-python libsmraw-python libvhdi-python libvmdk-python libvshadow-python python-bencode python-coveralls python-dateutil pytsk3 artifacts bencode binplist construct dfvfs dfwinreg dpkt xlsxwriter zmq dfdatetime pycrypto
+	apt-get -y install python-hachoir-core python-hachoir-metadata python-hachoir-parser python-pefile python-protobuf python-psutil python-pyparsing python-six python-yaml python-tz python-dateutil
 
 	mkdir plaso_depencies
 	cd plaso_depencies
-#	git clone https://github.com/libyal/libbde
-#	git clone https://github.com/libyal/libesedb
-#	git clone https://github.com/libyal/libevt
-#	git clone https://github.com/libyal/libevtx
-#	git clone https://github.com/libyal/libewf
-#	git clone https://github.com/libyal/libfsntfs
-#	git clone https://github.com/libyal/libfwsi
-#	git clone https://github.com/libyal/liblnk
-#	git clone https://github.com/libyal/libmsiecf
-#	git clone https://github.com/libyal/libolecf
-#	git clone https://github.com/libyal/libqcow
-#	git clone https://github.com/libyal/libregf
-#	git clone https://github.com/libyal/libscca
-#	git clone https://github.com/libyal/libsigscan
-#	git clone https://github.com/libyal/libsmdev
-#	git clone https://github.com/libyal/libsmraw
-#	git clone https://github.com/libyal/libvhdi
-#	git clone https://github.com/libyal/libvmdk
-#	git clone https://github.com/libyal/libvshadow
 
 	wget $libbde
 	wget $libesedb
@@ -148,15 +129,16 @@ install_plaso()
 	wget $libvmdk
 	wget $libvshadow
 
-	tar -xvf ./*.tar.gz
-	rm *.tar.gz
+	for f in ./*.tar.gz
+	do
+		tar -xvf $f
+		rm $f
+	done
 
 	for d in ./*
 	do
 		cd $d
-#		./synclibs.sh
-#		./autogen.sh
-#		./configure
+		./configure --enable-python
 		make
 		make install
 		python setup.py build
